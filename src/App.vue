@@ -1,28 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <main>
+    <game-display></game-display>
+    <board></board>
+    <hand></hand>
+  </main>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Hand from "./components/Hand.vue";
+import Board from "./components/Board.vue";
+import GameDisplay from "./components/GameDisplay.vue";
+
+
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Hand,
+    Board,
+    GameDisplay
   }
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+  body {
+    margin:0;
+    padding:0;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  main {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    
+    > .game-display {
+      height:10rem;
+    }
+
+    > .piles {
+      flex:1;
+      overflow: hidden;
+    }
+
+    > .hand {
+      height: 10rem;
+    }
+  }
+
 </style>
